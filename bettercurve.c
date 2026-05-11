@@ -127,7 +127,7 @@ void sortGradebook(const float *arrGradebook, int *arrWeights, int aSize, int *i
     int maxWeights[7] = {15, 40, 5, 10, 15, 20, 25};
 
     for (int i = 0; i < aSize; i++){
-        while (*(arrWeights + *(indexes + i)) < maxWeights[*(indexes + i)] && weightsTotal(arrWeights, aSize) < 100){ //this sucks to read. pretty much just keeps weights in the defined boundes
+        while (*(arrWeights + *(indexes + i)) < maxWeights[*(indexes + i)] && weightsTotal(arrWeights, aSize) < 100){ //this sucks to read. pretty much just keeps weights in the defined bounds
             *(arrWeights + *(indexes + i)) += 5; //all weight minimums and maximums are in multiples of 5. this is really just the maximum efficiency scalar
         }
     }
@@ -143,6 +143,6 @@ void printWeights(const int *arrWeights, int aSize){
     printf("Weights are as follows: ");
     for (int i = 0; i < aSize; i++){
         printf("%d ", *(arrWeights + i)); //easy print loop
-    }
+    } printf("\n");
     return;
 }
